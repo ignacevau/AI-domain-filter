@@ -16,6 +16,7 @@ class NamecheapProvider(Provider):
             params = {
                 "noHyphens": "true" if Config.NO_HYPHENS else "false",
                 "noNumbers": "true" if Config.NO_NUMBERS else "false",
+                "nameLength": f"_{Config.MAX_DOMAIN_LENGTH}",
                 "tld": ",".join(Config.DOMAIN_TLDS),
                 "pageSize": Config.BATCH_SIZE,
                 "page": chunk_page,
